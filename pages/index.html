@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        table#finTable,table#finTable td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .stlabel {
+          font-size: 15px;
+          font-style: italic;
+          font-weight: bold;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Nance trio arb finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jQuery-3.2.1.js"></script>
+  </head>
+  <body>
+    <div class="container">
+     <h1>Nance trio arb finder</h1>
+
+        
+        <div class="row">
+           <div class="col-sm-7">
+               <!-- <label class="stlabel">Show Trades above </label>
+               <input type="number" name="minLimit" value=""> -->
+           </div>
+           <div class="col-sm-2" id="runDiv">
+             <div class="row justify-content-end">
+               <button onclick="runToggle();" type="button" class="btn btn-success" id="runFlag">Toggle</button>&nbsp;&nbsp;
+               <input onchange="minLimit(this.value);" data-toggle="tooltip" data-placement="top" title="Minimum Profit Percent" class="col-sm-5" type="number" name="minLimit" value=0>
+             </div>
+           </div>
+        </div>
+        <br>
+       <div id="tartbit" class=" container row">
+          <table id="finTable" class="table table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>#S.No</th>
+              <th>Sequence</th>
+              <th>Profit%</th>
+            </tr>
+          </thead>
+          <tbody id="tartbitBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="js/index.js"></script>
+</html>
